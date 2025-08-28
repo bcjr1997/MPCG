@@ -55,5 +55,5 @@ python ./data_pipeline/format_batch_outputs.py
 
 7. Prepare Train, Dev and Test dataset 
 ```bash
-python ./utils/dataset_formatting/train_dev_test.py
+python ./data_pipeline/train_dev_test.py
 ```
