@@ -7,6 +7,7 @@ import torch
 from datasets import Dataset
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, TrainingArguments, Trainer
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support
+from constants.evaluation.labels import POLITIFACT_LABELS
 
 # importing necessary functions from dotenv library
 from dotenv import load_dotenv, dotenv_values 
@@ -15,12 +16,6 @@ load_dotenv()
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
-
-POLITIFACT_LABELS = {
-    'true': 0,
-    'half-true': 1,
-    'false': 2
-}
 
 class ClaimDataset(Dataset):
     def __init__(self, dataframe, tokenizer):

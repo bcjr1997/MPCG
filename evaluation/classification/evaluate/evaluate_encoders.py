@@ -7,6 +7,7 @@ import pandas as pd
 import torch
 from torch.utils.data import DataLoader, Dataset
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, get_scheduler
+from constants.evaluation.labels import POLITIFACT_LABELS
 from tqdm import tqdm
 from dotenv import load_dotenv, dotenv_values 
 # loading variables from .env file
@@ -14,12 +15,6 @@ load_dotenv()
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
-
-POLITIFACT_LABELS = {
-    'true': 0,
-    'half-true': 1,
-    'false': 2,
-}
 
 class ClaimDataset(Dataset):
     def __init__(self, dataframe, tokenizer):
