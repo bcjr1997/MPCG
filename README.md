@@ -79,3 +79,7 @@ After running MPCG, run the command below to prepare a generated dataset that us
 python ./evaluation/prepare_evaluation_dataset.py
 ```
 
+### Classification
+#### Finetune Encoder Models
+
+#### 
