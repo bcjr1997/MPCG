@@ -118,10 +118,4 @@ Evaluating Feasibility: 100%|████████████████| 2
 ```
 
 ### Metrics, Claim Analysis & Visualizations
-Run this script to get classification results.
-1. Prepare classification results
-```bash
-python ./utils/visualization/charts.py
-```
-
-2. Use `visualization.ipynb` to get Claim Analysis and Classification Results Visualizations.
+Use `visualization.ipynb` to get Claim Analysis and Classification Results Visualizations.
