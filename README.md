@@ -91,3 +91,37 @@ bash ./scripts/evaluate/encoder.sh
 bash ./scripts/evaluate/decoder.sh
 bash ./scripts/evaluate/gpt.sh
 ```
+
+### EQA Tool
+We use the tool provided by [Thibault et.al (2025)](https://github.com/ComplexData-MILA/misinfo-datasets).
+Please follow the directions in the mentioned repo.
+Here we show our results with 300 claims based on 20 unique PolitiFact articles.
+
+```
+(base) ➜  misinfo-datasets git:(main) ✗ source .env && \
+uv run -m misinfo_data_eval.entrypoint \
+--source_dataset_path csv://eqa.csv \
+--evaluate_feasibility \
+--evaluator_model_name gpt-4o-mini-2024-07-18 \
+--max_concurrency 32 \
+--limit 300
+len(dataset): 300
+100%|████████████████████████████████████| 300/300 [00:21<00:00, 13.94it/s]
+100%|████████████████████████████████████| 300/300 [00:26<00:00, 11.28it/s]
+Evaluating Feasibility: 100%|████████████████| 2/2 [00:48<00:00, 24.06s/it]
+{
+  "feasible, no search required": 28,
+  "feasible, requires search": 203,
+  "not feasible even with search": 59,
+  "null": 10
+}
+```
+
+### Metrics, Claim Analysis & Visualizations
+Run this script to get classification results.
+1. Prepare classification results
+```bash
+python ./utils/visualization/charts.py
+```
+
+2. Use `visualization.ipynb` to get Claim Analysis and Classification Results Visualizations.
