@@ -57,3 +57,16 @@ python ./data_pipeline/format_batch_outputs.py
 ```bash
 python ./data_pipeline/train_dev_test.py
 ```
+
+### Run MPCG
+After the dataset preparation process, run these steps. (We took about 2 days to do all of these without crashing on Google Colab A100 40 GB)
+
+1. Misinformation Generation
+```bash
+python ./mpcg/role_playing_misinformation_generation_cuda.py
+```
+
+2. Misinformation Labeling
+```bash
+python ./mpcg/role_playing_misinformation_labelling_cuda.py
+```
