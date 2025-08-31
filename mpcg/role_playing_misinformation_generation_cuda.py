@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 from huggingface_hub import login
 from torch.utils.data import DataLoader
 from tqdm.auto import tqdm
-from constants.roles import DEMOCRAT_ROLE, MODERATE_ROLE, REPUBLICAN_ROLE
+from constants.mpcg.roles import DEMOCRAT_ROLE, MODERATE_ROLE, REPUBLICAN_ROLE
 from utils.pytorch_dataset_classes.misinformation_dataset import MisinformationDataset
 from utils.huggingface.functions import step, format_chunks
 
