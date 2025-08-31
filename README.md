@@ -74,12 +74,20 @@ python ./mpcg/role_playing_misinformation_labelling_cuda.py
 
 ## MPCG Evaluations
 ### Prepare Generated Dataset
-After running MPCG, run the command below to prepare a generated dataset that uses the generated outputs.
+1. After running MPCG, run the command below to prepare a generated dataset that uses the generated outputs.
 ```bash
 python ./evaluation/prepare_evaluation_dataset.py
 ```
 
 ### Classification
-#### Finetune Encoder Models
+1. Finetune Encoder Models
+```bash
+bash ./scripts/finetune_encoders.sh
+```
 
-#### 
+2. Testing Encoder and Decoder Models
+```bash
+bash ./scripts/evaluate/encoder.sh
+bash ./scripts/evaluate/decoder.sh
+bash ./scripts/evaluate/gpt.sh
+```
