@@ -70,3 +70,10 @@ python ./mpcg/role_playing_misinformation_generation_cuda.py
 ```bash
 python ./mpcg/role_playing_misinformation_labelling_cuda.py
 ```
+
+### Prepare Generated Dataset
+After running MPCG, run the command below to prepare a generated dataset that uses the generated outputs.
+```bash
+python ./evaluation/prepare_evaluation_dataset.py
+```
+
