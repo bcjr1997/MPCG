@@ -3,7 +3,7 @@
 ## Abstract
 Misinformation evolves as it spreads, shifting in language, framing, and moral emphasis to adapt to new audiences. However, current misinformation detection approaches implicitly assume that misinformation is static. We introduce **MPCG**, a multi-round, persona-conditioned framework that simulates how claims are iteratively reinterpreted by agents with distinct ideological perspectives. Our approach uses an uncensored large language model (LLM) to generate persona-specific claims across multiple rounds, conditioning each generation on outputs from the previous round, enabling the study of misinformation evolution. We evaluate the generated claims through human and LLM-based annotations, cognitive effort metrics (readability, perplexity), emotion evocation metrics (sentiment analysis, morality), clustering, and downstream classification. Results show strong agreement between human and GPT-4o-mini annotations, with higher divergence in fluency judgments. Generated claims require greater cognitive effort than the original claims and consistently reflect persona-aligned emotional and moral framing. Clustering and cosine similarity analyses confirm semantic drift across rounds while preserving topical coherence. Classification results reveal that commonly used misinformation detectors experience macro-F1 performance drops of up to 50%.
 
-### Environment Setup
+## Environment Setup
 1. Create an environment with Python 3.10.
 
 Install dependencies with pip:
@@ -20,6 +20,7 @@ HF_TOKEN="Enter your HuggingFace Token"
 OPENAI_KEY="Enter your OpenAI API Key"
 ```
 
+## MPCG Framework
 ### Prepare the **Dataset** for the Framework
 Please run all of these commands in sequence to prepare the dataset.
 
@@ -71,6 +72,7 @@ python ./mpcg/role_playing_misinformation_generation_cuda.py
 python ./mpcg/role_playing_misinformation_labelling_cuda.py
 ```
 
+## MPCG Evaluations
 ### Prepare Generated Dataset
 After running MPCG, run the command below to prepare a generated dataset that uses the generated outputs.
 ```bash
