@@ -143,10 +143,10 @@ thinc==8.3.6
 threadpoolctl==3.6.0
 tiktoken==0.7.0
 tokenizers==0.13.3
-torch==2.6.1+cu121
+torch==2.6.0+cu121
 tqdm==4.66.5
 traitlets==5.14.3
-transformers==4.31.0
+transformers==4.35.2
 typer==0.17.4
 typing_extensions==4.12.2
 tzdata==2024.1
