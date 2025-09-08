@@ -20,6 +20,12 @@ HF_TOKEN="Enter your HuggingFace Token"
 OPENAI_KEY="Enter your OpenAI API Key"
 ```
 
+## Dataset
+### To access the dataset, please unzip **dataset.zip**
+```bash
+unzip dataset.zip
+```
+
 ## MPCG Framework
 ### Prepare the **Dataset** for the Framework
 Please run all of these commands in sequence to prepare the dataset.
