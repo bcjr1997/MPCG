@@ -10,9 +10,6 @@ python ./src/evaluate_models/evaluate_decoders.py --mode="zero_shot"  --save_pat
 # Round 3
 echo "Zero-Shot Round 3"
 python ./src/evaluate_models/evaluate_decoders.py --mode="zero_shot"  --save_path='./script_outputs/decoder_models_results/llama-3.1-8B-Instruct/zero_shot/round_3' --eval_data_path="./dataset/role_playing_misinformation_generated_datasets/round_3.json" --eval_batch_size=16
-# Mixed
-echo "Zero-Shot Mixed Round"
-python ./src/evaluate_models/evaluate_decoders.py --mode="zero_shot"  --save_path='./script_outputs/decoder_models_results/llama-3.1-8B-Instruct/zero_shot/mixed' --eval_data_path="./dataset/role_playing_misinformation_generated_datasets/mixed.json" --eval_batch_size=16
 # Original
 echo "Zero-Shot Original Round"
 python ./src/evaluate_models/evaluate_decoders.py --mode="zero_shot"  --save_path='./script_outputs/decoder_models_results/llama-3.1-8B-Instruct/zero_shot/original' --eval_data_path="./dataset/role_playing_misinformation_generated_datasets/original.json" --eval_batch_size=16
@@ -28,9 +25,6 @@ python ./src/evaluate_models/evaluate_decoders.py --mode="zero_shot_cot"  --save
 # Round 3
 echo "Zero-Shot CoT Round 3"
 python ./src/evaluate_models/evaluate_decoders.py --mode="zero_shot_cot"  --save_path='./script_outputs/decoder_models_results/llama-3.1-8B-Instruct/zero_shot_cot/round_3' --eval_data_path="./dataset/role_playing_misinformation_generated_datasets/round_3.json" --eval_batch_size=16
-# Mixed
-echo "Zero-Shot CoT Mixed Round"
-python ./src/evaluate_models/evaluate_decoders.py --mode="zero_shot_cot"  --save_path='./script_outputs/decoder_models_results/llama-3.1-8B-Instruct/zero_shot_cot/mixed' --eval_data_path="./dataset/role_playing_misinformation_generated_datasets/mixed.json" --eval_batch_size=16
 # Original
 echo "Zero-Shot CoT Original Round"
 python ./src/evaluate_models/evaluate_decoders.py --mode="zero_shot_cot"  --save_path='./script_outputs/decoder_models_results/llama-3.1-8B-Instruct/zero_shot_cot/original' --eval_data_path="./dataset/role_playing_misinformation_generated_datasets/original.json" --eval_batch_size=16
@@ -45,9 +39,6 @@ python ./src/evaluate_models/evaluate_decoders.py --mode="few_shot"  --save_path
 # Round 3
 echo "Few-Shot Round 3"
 python ./src/evaluate_models/evaluate_decoders.py --mode="few_shot"  --save_path='./script_outputs/decoder_models_results/llama-3.1-8B-Instruct/few_shot/round_3' --eval_data_path="./dataset/role_playing_misinformation_generated_datasets/round_3.json" --eval_batch_size=16
-# Mixed
-echo "Few-Shot Mixed Round"
-python ./src/evaluate_models/evaluate_decoders.py --mode="few_shot"  --save_path='./script_outputs/decoder_models_results/llama-3.1-8B-Instruct/few_shot/mixed' --eval_data_path="./dataset/role_playing_misinformation_generated_datasets/mixed.json" --eval_batch_size=16
 # Original
 echo "Few-Shot Original Round"
 python ./src/evaluate_models/evaluate_decoders.py --mode="few_shot"  --save_path='./script_outputs/decoder_models_results/llama-3.1-8B-Instruct/few_shot/original' --eval_data_path="./dataset/role_playing_misinformation_generated_datasets/original.json" --eval_batch_size=16
@@ -63,9 +54,6 @@ python ./src/evaluate_models/evaluate_decoders.py --mode="few_shot_cot"  --save_
 # Round 3
 echo "Few-Shot CoT Round 3"
 python ./src/evaluate_models/evaluate_decoders.py --mode="few_shot_cot"  --save_path='./script_outputs/decoder_models_results/llama-3.1-8B-Instruct/few_shot_cot/round_3' --eval_data_path="./dataset/role_playing_misinformation_generated_datasets/round_3.json" --eval_batch_size=16
-# Mixed
-echo "Few-Shot CoT Mixed Round"
-python ./src/evaluate_models/evaluate_decoders.py --mode="few_shot_cot"  --save_path='./script_outputs/decoder_models_results/llama-3.1-8B-Instruct/few_shot_cot/mixed' --eval_data_path="./dataset/role_playing_misinformation_generated_datasets/mixed.json" --eval_batch_size=16
 # Original
 echo "Few-Shot CoT Original Round"
 python ./src/evaluate_models/evaluate_decoders.py --mode="few_shot_cot"  --save_path='./script_outputs/decoder_models_results/llama-3.1-8B-Instruct/few_shot_cot/original' --eval_data_path="./dataset/role_playing_misinformation_generated_datasets/original.json" --eval_batch_size=16

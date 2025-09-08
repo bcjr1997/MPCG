@@ -91,7 +91,6 @@ def generate_test_dataset(args):
     round_1_df = round_1_df.sample(n=minimum_count, random_state=RANDOM_SEED).get(['generated_claims', 'fact_checking_evidences', 'generated_labels'])
     round_2_df = round_2_df.sample(n=minimum_count, random_state=RANDOM_SEED).get(['generated_claims', 'fact_checking_evidences', 'generated_labels'])
     round_3_df = round_3_df.sample(n=minimum_count, random_state=RANDOM_SEED).get(['generated_claims', 'fact_checking_evidences', 'generated_labels'])
-    mixed_df = df.sample(n=minimum_count, random_state=RANDOM_SEED).get(['generated_claims', 'fact_checking_evidences', 'generated_labels'])
     
     minimum_count = min(
         len(round_1_df[round_1_df['generated_labels'] == 'true']),
@@ -103,9 +102,6 @@ def generate_test_dataset(args):
         len(round_3_df[round_3_df['generated_labels'] == 'true']),
         len(round_3_df[round_3_df['generated_labels'] == 'half-true']),
         len(round_3_df[round_3_df['generated_labels'] == 'false']),
-        len(mixed_df[mixed_df['generated_labels'] == 'true']),
-        len(mixed_df[mixed_df['generated_labels'] == 'half-true']),
-        len(mixed_df[mixed_df['generated_labels'] == 'false']),
         len(original_df[original_df['label'] == 'true']),
         len(original_df[original_df['label'] == 'half-true']),
         len(original_df[original_df['label'] == 'false']),
@@ -114,20 +110,18 @@ def generate_test_dataset(args):
     round_1_df = format_generated_dataset(round_1_df, minimum_count, RANDOM_SEED)
     round_2_df = format_generated_dataset(round_2_df, minimum_count, RANDOM_SEED)
     round_3_df = format_generated_dataset(round_3_df, minimum_count, RANDOM_SEED)
-    mixed_df = format_generated_dataset(mixed_df, minimum_count, RANDOM_SEED)
     original_df = format_original_dataset(original_df, minimum_count, RANDOM_SEED)
     
     round_1_df.to_json(os.path.join(SAVE_PATH, 'round_1.json'))
     round_2_df.to_json(os.path.join(SAVE_PATH, 'round_2.json'))
     round_3_df.to_json(os.path.join(SAVE_PATH, 'round_3.json'))
-    mixed_df.to_json(os.path.join(SAVE_PATH, 'mixed.json'))
     original_df.to_json(os.path.join(SAVE_PATH, 'original.json'))
     
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='MPCG Dataset Preparation')
-    parser.add_argument('--save_path', type=str, default=os.path.join('script_outputs', 'role_playing_misinformation_generated_datasets'), help='Script output location')
-    parser.add_argument('--generated_data_path', type=str, default=os.path.join('script_outputs', 'role_playing_misinformation_labelling_output', 'role_playing_label_outputs.json'), help='politifact_articles_links.csv location')
-    parser.add_argument('--original_data_path', type=str, default=os.path.join('script_outputs', 'train_dev_test_split'), help='politifact_articles_links.csv location')
+    parser.add_argument('--save_path', type=str, default=os.path.join('dataset', 'role_playing_misinformation_generated_datasets'), help='Script output location')
+    parser.add_argument('--generated_data_path', type=str, default=os.path.join('dataset', 'role_playing_misinformation_labelling_output', 'role_playing_label_outputs.json'), help='politifact_articles_links.csv location')
+    parser.add_argument('--original_data_path', type=str, default=os.path.join('dataset', 'train_dev_test_split'), help='politifact_articles_links.csv location')
     parser.add_argument('--random_seed', type=int, default=42)
     args = parser.parse_args()
     generate_test_dataset(args)
