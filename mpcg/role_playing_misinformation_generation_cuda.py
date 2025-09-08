@@ -5,7 +5,6 @@ import torch
 import json
 import json_repair
 import transformers
-import datetime
 import pandas as pd
 from dotenv import load_dotenv
 from huggingface_hub import login
@@ -427,10 +426,9 @@ def perform_role_playing_generation(args):
     
     
 if __name__ == '__main__':
-    timestamp = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
     parser = argparse.ArgumentParser(description='Multi-Round Persona Based Claim Generation')
-    parser.add_argument('--save_path', type=str, default=os.path.join('script_outputs', 'role_playing_misinformation_generation_output'), help='Output Location')
-    parser.add_argument('--dataset_path', type=str, default=os.path.join('script_outputs', 'train_dev_test_split', 'test.json'), help='Dataset Location')
+    parser.add_argument('--save_path', type=str, default=os.path.join('dataset', 'role_playing_misinformation_generation_output'), help='Output Location')
+    parser.add_argument('--dataset_path', type=str, default=os.path.join('dataset', 'train_dev_test_split', 'test.json'), help='Dataset Location')
     parser.add_argument('--hf_model', type=str, default='Orenguteng/Llama-3.1-8B-Lexi-Uncensored-V2', help='HuggingFace Model')
     parser.add_argument('--batch_size', type=int, default=1, help='Batch Size')
     parser.add_argument('--max_tokens', type=float, default=256 * 32, help='LLM Max Tokens')

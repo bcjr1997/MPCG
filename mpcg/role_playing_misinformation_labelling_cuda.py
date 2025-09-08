@@ -183,8 +183,8 @@ def perform_role_playing_labelling(args):
     
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Multi-Round Persona Based Claim Labelling')
-    parser.add_argument('--save_path', type=str, default=os.path.join('script_outputs', 'role_playing_misinformation_labelling_output'), help='Output Location')
-    parser.add_argument('--dataset_path', type=str, default=os.path.join('script_outputs', 'role_playing_misinformation_generation_output', 'role_playing_outputs.json'), help='Dataset Location')
+    parser.add_argument('--save_path', type=str, default=os.path.join('dataset', 'role_playing_misinformation_labelling_output'), help='Output Location')
+    parser.add_argument('--dataset_path', type=str, default=os.path.join('dataset', 'role_playing_misinformation_generation_output', 'role_playing_outputs.json'), help='Dataset Location')
     parser.add_argument('--hf_model', type=str, default='meta-llama/Llama-3.1-8B-Instruct', help='HuggingFace Model')
     parser.add_argument('--batch_size', type=int, default=1, help='Batch Size')
     parser.add_argument('--max_tokens', type=float, default=256 * 32, help='LLM Max Tokens')
