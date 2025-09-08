@@ -8,3 +8,5 @@ __pycache__
 # Script Outputs
 script_outputs/
 
+# Dataset
+dataset/
