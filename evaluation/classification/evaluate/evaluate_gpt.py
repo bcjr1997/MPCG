@@ -114,7 +114,7 @@ if __name__ == '__main__':
     
     # Data Arguments
     parser.add_argument("--save_path", type=str, default=os.path.join('script_outputs', 'decoder_models_results', 'gpt-4o-mini'))
-    parser.add_argument("--eval_data_path", type=str, default=os.path.join('script_outputs', 'role_playing_misinformation_generated_datasets', '2025-03-21-00-48-13', 'mixed.json'))
+    parser.add_argument("--eval_data_path", type=str, default=os.path.join('dataset', 'role_playing_misinformation_generated_datasets', 'mixed.json'))
     parser.add_argument('--mode', type=str, default='few_shot', help='Script output location')
     parser.add_argument('--batch_size', type=int, default=2000, help='Script output location')
     

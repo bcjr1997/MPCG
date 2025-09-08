@@ -7,7 +7,7 @@ import pandas as pd
 import torch
 from torch.utils.data import DataLoader, Dataset
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, get_scheduler
-from constants.evaluation.labels import POLITIFACT_LABELS
+from constants.labels import POLITIFACT_LABELS
 from tqdm import tqdm
 from dotenv import load_dotenv, dotenv_values 
 # loading variables from .env file
@@ -110,7 +110,7 @@ if __name__ == "__main__":
     # Data Arguments
     parser.add_argument("--save_path", type=str, default=os.path.join('script_outputs', 'finetuned_encoder_models_results', 'bert-base-uncased', 'round_1'))
     parser.add_argument("--model_weights_path", type=str, default=os.path.join('script_outputs', 'finetuned_encoder_models', 'bert-base-uncased'))
-    parser.add_argument("--eval_data_path", type=str, default=os.path.join('script_outputs', 'role_playing_misinformation_generated_datasets', '2025-03-21-00-48-13', 'round_1.json'))
+    parser.add_argument("--eval_data_path", type=str, default=os.path.join('dataset', 'role_playing_misinformation_generated_datasets', 'round_1.json'))
     parser.add_argument("--num_labels", type=int, default=3)
     
     # Eval Arguments

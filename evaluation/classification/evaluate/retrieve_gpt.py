@@ -73,6 +73,6 @@ def start_evaluation(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='GPT Evaluation')
     parser.add_argument("--save_path", type=str, default=os.path.join('script_outputs', 'decoder_models_results', 'gpt-4o-mini'))
-    parser.add_argument("--original_data_path", type=str, default=os.path.join('script_outputs', 'role_playing_misinformation_generated_datasets', '2025-03-21-00-48-13'))
+    parser.add_argument("--original_data_path", type=str, default=os.path.join('script_outputs', 'role_playing_misinformation_generated_datasets'))
     args = parser.parse_args()
     start_evaluation(args)

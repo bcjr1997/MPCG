@@ -7,7 +7,7 @@ import torch
 from datasets import Dataset
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, Trainer, TrainingArguments, DataCollatorWithPadding
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support
-from constants.evaluation.labels import POLITIFACT_LABELS
+from constants.labels import POLITIFACT_LABELS
 from dotenv import load_dotenv
 
 # Load environment variables
@@ -148,8 +148,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Fine-Tuning DeBERTa")
     # Data Arguments
     parser.add_argument("--save_path", type=str, default=os.path.join('script_outputs', 'finetuned_encoder_models', 'deberta-v3-base'))
-    parser.add_argument("--training_data_path", type=str, default=os.path.join('script_outputs', 'train_dev_test_split', 'train.json'))
-    parser.add_argument("--dev_data_path", type=str, default=os.path.join('script_outputs', 'train_dev_test_split', 'dev.json'))
+    parser.add_argument("--training_data_path", type=str, default=os.path.join('dataset', 'train_dev_test_split', 'train.json'))
+    parser.add_argument("--dev_data_path", type=str, default=os.path.join('dataset', 'train_dev_test_split', 'dev.json'))
     parser.add_argument("--num_labels", type=int, default=3)
     
     # Training Arguments

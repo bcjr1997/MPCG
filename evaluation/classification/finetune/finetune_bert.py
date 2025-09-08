@@ -7,7 +7,7 @@ import torch
 from datasets import Dataset
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, TrainingArguments, Trainer
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support
-from constants.evaluation.labels import POLITIFACT_LABELS
+from constants.labels import POLITIFACT_LABELS
 
 # importing necessary functions from dotenv library
 from dotenv import load_dotenv, dotenv_values 
@@ -146,8 +146,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Finetune BERT Model")
     # Data Arguments
     parser.add_argument("--save_path", type=str, default=os.path.join('script_outputs', 'finetuned_encoder_models', 'bert-large-uncased'))
-    parser.add_argument("--training_data_path", type=str, default=os.path.join('script_outputs', 'train_dev_test_split', 'train.json'))
-    parser.add_argument("--dev_data_path", type=str, default=os.path.join('script_outputs', 'train_dev_test_split', 'dev.json'))
+    parser.add_argument("--training_data_path", type=str, default=os.path.join('dataset', 'train_dev_test_split', 'train.json'))
+    parser.add_argument("--dev_data_path", type=str, default=os.path.join('dataset', 'train_dev_test_split', 'dev.json'))
     parser.add_argument("--num_labels", type=int, default=3)
     
     # Training Arguments

@@ -184,7 +184,7 @@ if __name__ == '__main__':
     
     # Data Arguments
     parser.add_argument("--save_path", type=str, default=os.path.join('script_outputs', 'decoder_models_results', 'llama-3.1-8B-Instruct'))
-    parser.add_argument("--eval_data_path", type=str, default=os.path.join('script_outputs', 'role_playing_misinformation_generated_datasets', '2025-03-21-00-48-13', 'mixed.json'))
+    parser.add_argument("--eval_data_path", type=str, default=os.path.join('dataset', 'role_playing_misinformation_generated_datasets', 'mixed.json'))
     parser.add_argument('--hf_model', type=str, default='meta-llama/Llama-3.1-8B-Instruct', help='Model')
     parser.add_argument('--max_tokens', type=float, default=256 * 32, help='Script output location')
     parser.add_argument('--mode', type=str, default='zero_shot', help='Script output location')
