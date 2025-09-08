@@ -2,7 +2,6 @@ import os
 import argparse
 import json
 import pandas as pd
-from datetime import datetime
 from tqdm import tqdm
 import json_repair
 
@@ -138,11 +137,10 @@ def format_openai_output(args):
     df.to_json(os.path.join(SAVE_PATH, 'formatted_openai_output.json'))
 
 if __name__ == '__main__':
-    timestamp = datetime.now().strftime("%Y-%m-%d--%H-%M-%S")
     parser = argparse.ArgumentParser(description='PolitiFact Format Batch Outputs (Step 6)')
-    parser.add_argument('--save_path', type=str, default=os.path.join('script_outputs', 'politifact-gpt-4o-mini-formatted-results', timestamp), help='Script output location')
-    parser.add_argument('--openai_batch_results', type=str, default=os.path.join('script_outputs', 'politifact-gpt-4o-mini-extractor-results', 'TIMESTAMP'), help='politifact-gpt-4o-mini-extractor-results location')
-    parser.add_argument('--politifact_extracted_articles', type=str, default=os.path.join('script_outputs', 'politifact-extracted-articles', 'TIMESTAMP'), help='ppolitifact-extracted-articles location')
+    parser.add_argument('--save_path', type=str, default=os.path.join('script_outputs', 'politifact-gpt-4o-mini-formatted-results'), help='Script output location')
+    parser.add_argument('--openai_batch_results', type=str, default=os.path.join('script_outputs', 'politifact-gpt-4o-mini-extractor-results'), help='politifact-gpt-4o-mini-extractor-results location')
+    parser.add_argument('--politifact_extracted_articles', type=str, default=os.path.join('script_outputs', 'politifact-extracted-articles'), help='ppolitifact-extracted-articles location')
 
     args = parser.parse_args()
     format_openai_output(args)

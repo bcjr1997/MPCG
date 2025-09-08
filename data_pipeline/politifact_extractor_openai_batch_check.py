@@ -2,7 +2,6 @@ import os
 import argparse
 import json
 import pandas as pd
-from datetime import datetime
 from tqdm import tqdm
 from openai import OpenAI
 import json_repair
@@ -46,10 +45,9 @@ def check_current_batch_status(args):
         outfile.close()
 
 if __name__ == '__main__':
-    timestamp = datetime.now().strftime("%Y-%m-%d--%H-%M-%S")
     parser = argparse.ArgumentParser(description='Politifact Extractor OpenAI Batch Check (Step 5)')
-    parser.add_argument('--save_path', type=str, default=os.path.join('script_outputs', 'politifact-gpt-4o-mini-extractor-results', timestamp), help='Script output location')
-    parser.add_argument('--openai_batch_request', type=str, default=os.path.join('script_outputs', 'politifact-gpt-4o-mini-extractor-requests', 'TIMESTAMP'), help='politifact-gpt-4o-mini-extractor-requests location')
+    parser.add_argument('--save_path', type=str, default=os.path.join('script_outputs', 'politifact-gpt-4o-mini-extractor-results'), help='Script output location')
+    parser.add_argument('--openai_batch_request', type=str, default=os.path.join('script_outputs', 'politifact-gpt-4o-mini-extractor-requests'), help='politifact-gpt-4o-mini-extractor-requests location')
 
     args = parser.parse_args()
     check_current_batch_status(args)

@@ -4,7 +4,6 @@ import re
 import csv
 import os
 import argparse
-import datetime
 import json
 import time
 import random
@@ -12,7 +11,7 @@ import spacy
 import spacy_fastlang # Do not remove this. This is for language_detector
 from bs4 import BeautifulSoup
 from multiprocessing import Pool
-from constants.data_pipeline.politifact import POLITIFACT_CONFIG
+from constants.politifact import POLITIFACT_CONFIG
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
@@ -121,9 +120,8 @@ def get_all_politifact_links(args):
     logging.info(f"Done saving to politifact_article_links.csv")
 
 if __name__ == '__main__':
-    timestamp = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
     parser = argparse.ArgumentParser(description='Politifact Link Extractor (Step 1)')
-    parser.add_argument('--save_path', type=str, default=os.path.join('script_outputs', 'politifact-raw', timestamp), help='Script output location')
+    parser.add_argument('--save_path', type=str, default=os.path.join('script_outputs', 'politifact-raw'), help='Script output location')
     parser.add_argument('--page_limit', type=int, default=50, help='Page Limit for Scrapping in PolitiFact')
 
     args = parser.parse_args()

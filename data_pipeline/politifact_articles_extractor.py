@@ -4,7 +4,6 @@ import re
 import csv
 import os
 import argparse
-import datetime
 import json
 from bs4 import BeautifulSoup
 from tqdm import tqdm
@@ -74,10 +73,9 @@ def extract_politifact_articles_from_urls(args):
             file.close()
 
 if __name__ == '__main__':
-    timestamp = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
     parser = argparse.ArgumentParser(description='Politifact Articles Extractor (Step 2)')
-    parser.add_argument('--save_path', type=str, default=os.path.join('script_outputs', 'politifact-raw-article-html', timestamp), help='Script output location')
-    parser.add_argument('--article_links_folder', type=str, default=os.path.join('script_outputs', 'politifact-raw', 'TIMESTAMP'), help='politifact-raw location')
+    parser.add_argument('--save_path', type=str, default=os.path.join('script_outputs', 'politifact-raw-article-html'), help='Script output location')
+    parser.add_argument('--article_links_folder', type=str, default=os.path.join('script_outputs', 'politifact-raw'), help='politifact-raw location')
 
     args = parser.parse_args()
     extract_politifact_articles_from_urls(args)

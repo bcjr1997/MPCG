@@ -4,7 +4,6 @@ import re
 import csv
 import os
 import argparse
-from datetime import datetime
 from uuid import uuid4
 import json
 from bs4 import BeautifulSoup
@@ -278,10 +277,9 @@ def extract_articles_from_html(args):
         df.to_json(SAVE_FILE_PATH, orient='records')
         
 if __name__ == '__main__':
-    timestamp = datetime.now().strftime("%Y-%m-%d--%H-%M-%S")
     parser = argparse.ArgumentParser(description='Politifact Articles Formatter (Step 3)')
-    parser.add_argument('--save_path', type=str, default=os.path.join('script_outputs', 'politifact-extracted-articles', timestamp), help='Script output location')
-    parser.add_argument('--article_raw_html_folder', type=str, default=os.path.join('script_outputs', 'politifact-raw-article-html', 'TIMESTAMP'), help='politifact-raw-article-html location')
+    parser.add_argument('--save_path', type=str, default=os.path.join('script_outputs', 'politifact-extracted-articles'), help='Script output location')
+    parser.add_argument('--article_raw_html_folder', type=str, default=os.path.join('script_outputs', 'politifact-raw-article-html'), help='politifact-raw-article-html location')
 
     args = parser.parse_args()
     extract_articles_from_html(args)

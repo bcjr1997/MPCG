@@ -2,7 +2,6 @@ import os
 import argparse
 import json
 import pandas as pd
-from datetime import datetime
 from tqdm import tqdm
 from bs4 import BeautifulSoup
 from openai import OpenAI
@@ -214,10 +213,9 @@ def prepare_misinformation_sources_and_fact_checking_data(args):
         outfile.close()
 
 if __name__ == '__main__':
-    timestamp = datetime.now().strftime("%Y-%m-%d--%H-%M-%S")
     parser = argparse.ArgumentParser(description='Politifact Extractor OpenAI Batch Requests (Step 4)')
-    parser.add_argument('--save_path', type=str, default=os.path.join('script_outputs', 'politifact-gpt-4o-mini-extractor-requests', timestamp), help='Script output location')
-    parser.add_argument('--politifact_extracted_articles', type=str, default=os.path.join('script_outputs', 'politifact-extracted-articles', 'TIMESTAMP'), help='politifact-extracted-articles location')
+    parser.add_argument('--save_path', type=str, default=os.path.join('script_outputs', 'politifact-gpt-4o-mini-extractor-requests'), help='Script output location')
+    parser.add_argument('--politifact_extracted_articles', type=str, default=os.path.join('script_outputs', 'politifact-extracted-articles'), help='politifact-extracted-articles location')
 
     args = parser.parse_args()
     prepare_misinformation_sources_and_fact_checking_data(args)
