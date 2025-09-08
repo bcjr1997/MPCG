@@ -100,7 +100,7 @@ Here we show our results with 300 claims based on 20 unique PolitiFact articles.
 ```
 (base) ➜  misinfo-datasets git:(main) ✗ source .env && \
 uv run -m misinfo_data_eval.entrypoint \
---source_dataset_path csv://eqa.csv \
+--source_dataset_path csv://dataset/eqa/data.csv \
 --evaluate_feasibility \
 --evaluator_model_name gpt-4o-mini-2024-07-18 \
 --max_concurrency 32 \
