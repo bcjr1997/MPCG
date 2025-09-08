@@ -4,7 +4,6 @@ import pandas as pd
 import json
 import logging
 import math
-from datetime import datetime
 
 # Prepare Logger
 logger = logging.getLogger(__name__)
@@ -55,9 +54,8 @@ def train_dev_test(args):
     test.to_json(os.path.join(SAVE_PATH, "test.json"))
 
 if __name__ == '__main__':
-    timestamp = datetime.now().strftime("%Y-%m-%d--%H-%M-%S")
     parser = argparse.ArgumentParser(description='Train Dev Test Dataset Split')
-    parser.add_argument('--save_path', type=str, default=os.path.join('script_outputs', 'train_dev_test_split', timestamp), help='Script output location')
-    parser.add_argument('--data_path', type=str, default=os.path.join('script_outputs', 'politifact-gpt-4o-mini-formatted-results', 'TIMESTAMP'), help='Data Location')
+    parser.add_argument('--save_path', type=str, default=os.path.join('script_outputs', 'train_dev_test_split'), help='Script output location')
+    parser.add_argument('--data_path', type=str, default=os.path.join('script_outputs', 'politifact-gpt-4o-mini-formatted-results'), help='Data Location')
     args = parser.parse_args()
     train_dev_test(args)
