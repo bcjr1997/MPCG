@@ -14,3 +14,4 @@ dataset/
 # Visualization Data
 enriched_claims_analysis.csv
 moral_foundation_scores.csv
+metrics.json
